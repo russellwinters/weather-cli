@@ -17,7 +17,6 @@ Once you have your API key, you need to add it to your environment variables:
 
 ```
 WEATHER_API_KEY=your_api_key_here
-
 ```
 
 Replace `your_api_key_here` with your actual API key from OpenWeatherMap.
