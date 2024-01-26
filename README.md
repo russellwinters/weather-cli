@@ -38,5 +38,5 @@ cargo run -- --city <your_city>
 OR
 
 ```
-cargo run -- -c <you_city>
+cargo run -- -c <your_city>
 ```
