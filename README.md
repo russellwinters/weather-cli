@@ -28,3 +28,15 @@ From the root directory, run:
 ```
 cargo run
 ```
+
+The default city is Seattle, but you can change this with:
+
+```
+cargo run -- --city <your_city>
+```
+
+OR
+
+```
+cargo run -- -c <you_city>
+```

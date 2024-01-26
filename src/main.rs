@@ -5,14 +5,15 @@ use std::error::Error;
 mod common;
 mod weather;
 
-use common::load_env_var;
+use common::{load_env_var, Args};
 use weather::{fetch_data, transform_response};
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn Error>> {
     dotenv().ok();
     let api_key_var: String = load_env_var("WEATHER_API_KEY").expect("Unable to get API key");
-    let city = "squamish"; // TODO: Get this from args
+    let city: String = Args::get_city();
+
     let url: String = format!(
         "https://api.openweathermap.org/data/2.5/weather?q={}&appid={}&units=metric",
         city, api_key_var
