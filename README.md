@@ -32,11 +32,17 @@ cargo run
 The default city is Seattle, but you can change this with:
 
 ```
-cargo run -- --city <your_city>
+cargo run -- --city Reno
 ```
 
 OR
 
 ```
-cargo run -- -c <your_city>
+cargo run -- -c Reno
+```
+
+Note: If you want to enter a city with multiple words, like "New York" you'll need to wrap the full city in quotations:
+
+```
+cargo run -- --city "New York"
 ```
