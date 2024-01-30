@@ -6,7 +6,7 @@ mod common;
 mod weather;
 
 use common::{load_env_var, Args};
-use weather::{fetch_data, transform_response};
+use weather::{fetch_data, transform_response, WeatherData};
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn Error>> {
@@ -28,9 +28,8 @@ async fn main() -> Result<(), Box<dyn Error>> {
             .await
             .expect("Error transporming response to text");
 
-        let data = transform_response(&body).await.expect("Error parsing data");
-
-        println!("Response JSON: {:?}", data);
+        let data: WeatherData = transform_response(&body).await.expect("Error parsing data");
+        data.print_weather();
     } else {
         println!("Failed to call API: {}", response.status())
     }

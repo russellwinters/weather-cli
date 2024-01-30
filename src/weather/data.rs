@@ -44,3 +44,14 @@ pub struct WeatherData {
     weather: Vec<Conditions>,
     wind: Wind,
 }
+
+impl WeatherData {
+    pub fn print_weather(&self) -> () {
+        println!("Weather report for: {}, {}", self.name, self.sys.country);
+        println!("Current temperature: {}", format!("{:.1}", self.main.temp));
+        println!("Feels like: {}", format!("{:.1}", self.main.feels_like));
+        if self.weather.len() > 0 {
+            println!("Current conditions: {}", self.weather[0].main)
+        }
+    }
+}
